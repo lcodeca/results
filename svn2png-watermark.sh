@@ -7,7 +7,7 @@ do
 	rsvg-convert $fname -o $newname
 
     convert $newname \
-        \( -size 100x -background none -fill '#0008' -gravity center \
+        \( -size 300x -background none -fill '#0008' -gravity center \
         label:"ask-to:lara.codeca@gmail.com" -trim -rotate -30 \
         -bordercolor none -border 10 \
         -write mpr:wm +delete \
