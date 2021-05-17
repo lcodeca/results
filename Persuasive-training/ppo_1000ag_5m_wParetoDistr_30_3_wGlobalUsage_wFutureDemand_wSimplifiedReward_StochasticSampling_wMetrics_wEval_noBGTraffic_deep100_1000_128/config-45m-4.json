@@ -1,0 +1,31 @@
+{
+    "agents_init": "/root/research/learning/ppo_1000ag_5m_wParetoDistr_30_2_30_4_wGlobalUsage_wFutureDemand_wSimplifiedReward_StochasticSampling_wMetrics_wEval_noBGTraffic_deep100_1000_128/cfgs_agents/generic-5m-start-45-4.json",
+
+    "marl_env_config": {
+        "sumo_config": {
+            "sumo_connector": "libsumo",
+            "sumo_gui": true,
+            "sumo_cfg": "/root/research/learning/ppo_1000ag_5m_wParetoDistr_30_2_30_4_wGlobalUsage_wFutureDemand_wSimplifiedReward_StochasticSampling_wMetrics_wEval_noBGTraffic_deep100_1000_128/rndgrid.saga.nobgt.sumocfg",
+            "sumo_output": "sumo/",
+            "sumo_params": [],
+            "trace_file": false,
+            "end_of_sim": 86400,
+            "update_freq": 120,
+            "tripinfo_keyword": ".tripinfo.xml",
+            "tripinfo_xml_schema": "/root/research/sumo/data/xsd/tripinfo_file.xsd",
+            "log_level": "INFO",
+            "misc": {
+                "max_time": 86400
+            }
+        },
+
+        "agent_rnd_order": true,
+        "seed": 42,
+        "log_level": "INFO",
+        "misc": {
+            "sumo_net_file": "/root/research/devel/scenarios/random-grid-sumo/scenario/random.net.xml",
+            "bounding_box": [-146.63, -339.13, 4043.48, 3838.63],
+            "max_time": 39600
+        }
+    }
+}
