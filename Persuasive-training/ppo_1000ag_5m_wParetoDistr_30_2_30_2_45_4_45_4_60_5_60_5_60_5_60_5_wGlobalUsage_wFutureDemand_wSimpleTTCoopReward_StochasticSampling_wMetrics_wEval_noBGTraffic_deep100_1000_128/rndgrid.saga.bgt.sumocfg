@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/sumoConfiguration.xsd">
+
+    <input>
+        <net-file value="/home/alice/devel/scenarios/random-grid-sumo/scenario/random.net.xml"/>
+        <route-files value="/home/alice/devel/scenarios/random-grid-sumo/scenario/rou/buses.flows.xml,/home/alice/devel/scenarios/random-grid-sumo/scenario/rou/metro.flows.xml,/home/alice/devel/scenarios/random-grid-sumo/scenario/rou/saga.merged.rou.xml"/>
+        <additional-files value="/home/alice/devel/scenarios/random-grid-sumo/scenario/busStops.add.xml,/home/alice/devel/scenarios/random-grid-sumo/scenario/metroStops.add.xml,/home/alice/devel/scenarios/random-grid-sumo/scenario/parkingArea.add.xml,/home/alice/devel/scenarios/random-grid-sumo/scenario/parkingAreaRerouters.add.xml,/home/alice/devel/scenarios/random-grid-sumo/scenario/basic.vType.xml,/home/alice/devel/scenarios/random-grid-sumo/scenario/poly.add.xml"/>
+    </input>
+
+    <time>
+        <begin value="0.0"/>
+        <step-length value="1.0"/>
+        <end value="172800.0"/>
+    </time>
+
+    <output>
+        <output-prefix value='sumo/'/>
+        <summary-output value=".summary.xml"/>
+        <tripinfo-output value=".tripinfo.xml"/>
+        <tripinfo-output.write-unfinished value="false"/>
+        <stop-output value='.stopinfo.xml'/>
+    </output>
+
+    <processing>
+        <ignore-route-errors value="true"/>
+        <lateral-resolution value="1.6"/>
+        <ignore-junction-blocker value="60"/>
+        <collision.action value="warn"/>
+        <time-to-teleport value="300"/>
+        <max-depart-delay value="86400"/>
+        <time-to-impatience value="30"/>
+        <pedestrian.model value="striping"/>
+        <pedestrian.striping.stripe-width value="0.55"/>
+        <pedestrian.striping.jamtime value="30"/>
+        <!-- <default.action-step-length value="1"/> -->
+        <!-- <emergencydecel.warning-threshold value="1.1"/> -->
+        <default.emergencydecel value="decel"/>
+    </processing>
+
+    <routing>
+        <persontrip.transfer.car-walk value="parkingAreas,ptStops"/>
+        <device.rerouting.probability value="1"/>
+        <device.rerouting.period value="300"/>
+        <device.rerouting.pre-period value="300"/>
+        <person-device.rerouting.probability value="1"/>
+        <person-device.rerouting.period value="300"/>
+        <device.rerouting.threads value="4"/>
+    </routing>
+
+    <report>
+        <!-- Testing -->
+        <!-- <verbose value="true"/> -->
+        <!-- <no-step-log value="false"/> -->
+        <!-- <duration-log.statistics value="true"/> -->
+        <!-- <duration-log.disable value="false"/> -->
+        <!-- <no-warnings value="false"/> -->
+
+        <!-- Release -->
+        <verbose value="false"/>
+        <no-step-log value="true"/>
+        <duration-log.statistics value="false"/>
+        <duration-log.disable value="true"/>
+        <no-warnings value="true"/>
+    </report>
+
+</configuration>
